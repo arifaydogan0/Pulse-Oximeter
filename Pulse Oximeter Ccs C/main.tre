@@ -1,0 +1,17 @@
+ÀÄmain
+   ÃÄMAIN  0/206  Ram=21
+   ³  ÃÄ@cinit1  (Inline)  Ram=0
+   ³  ÃÄ@delay_ms2  0/21  Ram=1
+   ³  ÃÄ@delay_ms2  0/21  Ram=1
+   ³  ÃÄ@delay_ms2  0/21  Ram=1
+   ³  ÃÄ@MUL88  0/37  Ram=2
+   ³  ÃÄ@DIV88  0/21  Ram=3
+   ³  ÃÄ@DIV88  0/21  Ram=3
+   ³  ÃÄ@DIV88  0/21  Ram=3
+   ³  ÃÄ@MUL88  0/37  Ram=2
+   ³  ÃÄ@DIV88  0/21  Ram=3
+   ³  ÃÄ@DIV88  0/21  Ram=3
+   ³  ÃÄ@delay_ms2  0/21  Ram=1
+   ³  ÃÄ@delay_ms2  0/21  Ram=1
+   ³  ÀÄ@delay_ms2  0/21  Ram=1
+   ÀÄtimer1kesme  0/21  Ram=0

@@ -1,0 +1,5 @@
+AÇIKLAMA: Kýzýlötesi sensör ve mikro kontrolcü kullanarak parmak ucundan nabýz ölçen devre tasarýmý.
+
+AMAÇ: Ç.Ü. Biyomedikal Müh. Mikroiþlemciler Dersi Dönem Projesi
+
+EKÝPMAN: (CCS C, Proteus, Pic 16F628A)

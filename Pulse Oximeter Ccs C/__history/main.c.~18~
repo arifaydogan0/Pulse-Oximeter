@@ -1,0 +1,69 @@
+#include <main.h>
+#include <math.h>
+#fuses INTRC_IO,NOWDT,NOPUT,NOPROTECT,NOCPD
+#use delay(clock=4000000)
+#use fast_io(a)
+#use fast_io(b)
+
+int i=0;
+
+#int_timer1
+void timer1kesme()
+{
+ set_timer1(60536);
+  if(i<500)
+  {i++;}
+}
+
+void main()
+{
+set_tris_a(0x34);
+set_tris_b(0x80);
+
+output_a(0x00);
+output_b(0x00);
+
+enable_interrupts(int_timer1);
+enable_interrupts(GLOBAL);
+
+   while(TRUE)
+   {
+      if(input(pin_a4))
+      {
+        int32 pulse=0;
+        int32 nabiz=0;
+        
+        delay_ms(3000);
+        output_high(pin_a3);       //Ledi yak
+        
+        setup_timer_1(T1_INTERNAL | T1_DIV_BY_8);   //Bölme oraný 2, dahili osilatör.
+        set_timer1(60536);                         //Saymaya baþlama deðeri
+           while(i<500)
+           {
+             if(input(pin_a2))       //Sinyal gelirse..
+             {
+               delay_ms(222);
+               output_high(pin_a1);  //Buzzer ötsün
+               delay_ms(77);  
+               pulse++;              //Pulseyi bir arttýr       
+             }
+            output_low(pin_a1);
+           }
+        setup_timer_1(T1_DISABLED); //Timer1 kapat
+        i=0;
+        output_low(pin_a3);            //Ledi söndür(yanmasý-sönmesi arasý zaman 10 saniye olmalý)
+        nabiz=pulse*3;
+        
+        output_high(pin_a7);
+        output_b(0xff);
+        delay_ms(3000);
+        output_high(pin_a0);
+        output_b(nabiz);
+        delay_ms(10000);
+        output_b(pulse);
+        if(nabiz<180){output_high(pin_a1); delay_ms(5555); output_low(pin_a1);}
+         else {output_high(pin_a3); delay_ms(5555); output_low(pin_a3);}
+      }
+   }
+
+}

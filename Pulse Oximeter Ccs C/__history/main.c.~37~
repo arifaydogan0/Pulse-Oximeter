@@ -1,0 +1,95 @@
+#include <main.h>
+#include <math.h>
+#fuses INTRC_IO,NOWDT,NOPUT,NOPROTECT,NOCPD
+#use delay(clock=4000000)
+#use fast_io(a)
+#use fast_io(b)
+
+int16 i=0;
+
+#int_timer1
+void timer1kesme()
+{
+ set_timer1(60536);
+  if(i<500)
+  {i++;}
+}
+
+void main()
+{
+int pulse;
+int nabiz;
+int ekran1=0;
+int ekran2=0;
+int ekran3=0;
+int a=0;
+int b=0;
+
+set_tris_a(0x34);
+set_tris_b(0x80);
+
+output_a(0x00);
+output_b(0x00);
+
+enable_interrupts(int_timer1);
+enable_interrupts(GLOBAL);
+
+   while(TRUE)
+   {
+      if(input(pin_a4))
+      {
+        pulse=0;
+        nabiz=0;
+        
+        delay_ms(3000);
+        output_high(pin_a3);       //Ledi yak
+        
+        setup_timer_1(T1_INTERNAL | T1_DIV_BY_8);   //Bölme oraný 2, dahili osilatör.
+        set_timer1(60536);                         //Saymaya baþlama deðeri
+           while(i<500)
+           {
+             if(input(pin_a2))       //Sinyal gelirse..
+             {
+               delay_ms(222);
+               output_high(pin_a1);  //Buzzer ötsün
+               delay_ms(77);  
+               pulse++;              //Pulseyi bir arttýr       
+             }
+            output_low(pin_a1);
+           }
+        setup_timer_1(T1_DISABLED); //Timer1 kapat
+        i=0;
+        output_low(pin_a3);            //Ledi söndür(yanmasý-sönmesi arasý zaman 10 saniye olmalý)
+        nabiz=pulse*3;
+        
+        ekran3=nabiz%10;
+        
+        a=(nabiz-ekran3)/10;
+        ekran2=a%10;
+        
+        b=nabiz-((ekran2*10)+ekran3)/100;
+        ekran1=b%10;
+        
+        int dizi[10]={63,3,109,103,83,118,126,35,127,119};
+
+      }
+      for(int display=0; display<222; display++)
+      {
+        output_b(dizi[ekran3]);
+        output_high(pin_a6);
+        delay_ms(3);
+        output_low(pin_a6);
+        
+        output_b(dizi[ekran2]);
+        output_high(pin_a7);
+        delay_ms(3);
+        output_low(pin_a7);
+        
+        output_b(dizi[ekran1]);
+        output_high(pin_a0);
+        delay_ms(3);
+        output_low(pin_a0);
+      }
+   }
+
+}

@@ -1,0 +1,92 @@
+[PROJECT]
+Target=main.hex
+Processor_Text=PIC16F628A
+CCSVerions=5.036
+Compiler=PCM
+CCSVersion=5.036
+[Target Data]
+FileList=main.c
+[Directories]
+Include=
+[C:\Users\belge\Desktop\PÝC C COMPÝLER\deneme 2\main]
+Type=4
+[mru-list]
+1=main.c
+
+[ProjectLog]
+Days=7
+D1=09-07-2018
+D1_L=5
+D1_L1=[82473]Project Opened.
+D1_L2=[83129]Started Editing.
+D1_L3=[83434]Stopped Editing.
+D1_L4=[83733]Started Editing.
+D1_L5=[84295]Stopped Editing.
+D2=10-07-2018
+D2_L=24
+D2_L1=[2141]Started Editing.
+D2_L2=[2460]Stopped Editing.
+D2_L3=[4020]Started Editing.
+D2_L4=[7078]Stopped Editing.
+D2_L5=[7947]Started Editing.
+D2_L6=[8536]Stopped Editing.
+D2_L7=[9094]Started Editing.
+D2_L8=[9601]Stopped Editing.
+D2_L9=[9843]Started Editing.
+D2_L10=[10495]Stopped Editing.
+D2_L11=[10898]Started Editing.
+D2_L12=[11276]Stopped Editing.
+D2_L13=[11704]Started Editing.
+D2_L14=[12037]Stopped Editing.
+D2_L15=[12635]Started Editing.
+D2_L16=[13197]Stopped Editing.
+D2_L17=[14721]Started Editing.
+D2_L18=[15125]Stopped Editing.
+D2_L19=[15794]Started Editing.
+D2_L20=[19202]Stopped Editing.
+D2_L21=[19699]Started Editing.
+D2_L22=[21242]Stopped Editing.
+TotalEdit=159
+TotalDebug=0
+D2_E=146
+D2_D=0
+D2_L23=[21328]Project Closed.
+D2_L24=[54369]Project Opened.
+D3=11-07-2018
+D3_L=3
+D3_L1=[11121]Started Editing.
+D3_L2=[11853]Stopped Editing.
+D3_E=13
+D3_D=0
+D3_L3=[11853]Project Closed.
+D4=03-09-2018
+D4_L=2
+D4_L1=[77931]Project Opened.
+D4_L2=[78249]Project Closed.
+D5=02-11-2018
+D5_L=2
+D5_L1=[71724]Project Opened.
+D5_L2=[71834]Project Closed.
+D6=01-12-2018
+D6_L=2
+D6_L1=[57080]Project Opened.
+D6_L2=[60325]Project Closed.
+D7=21-12-2018
+D7_L=2
+D7_L1=[84848]Project Opened.
+D7_L2=[84941]Project Closed.
+
+[Opened Files]
+1=main.c
+t1=5
+2=..\Nabýz Ölçer\main.c
+t2=1
+Count=1
+[main.c]
+Type=4
+
+[defines]
+buildcount=36
+[Units]
+Count=1
+1=main (main)
